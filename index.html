@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altar de Muertos</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #ff6600;
+            --yellow: #ffcc00;
+            --purple: #2a0845;
+            --pink: #e91e63;
+            --dark-purple: #130321;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--dark-purple) 0%, #3b0754 100%);
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 3.5rem;
+            color: var(--yellow);
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5), 3px 3px 0px var(--pink);
+            margin: 0;
+        }
+
+        p.subtitle {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .banner-picado {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .flag {
+            width: 35px;
+            height: 45px;
+            background-color: var(--pink);
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+            animation: sway 3s infinite ease-in-out alternate;
+        }
+
+        .flag:nth-child(2n) { background-color: var(--orange); animation-delay: 0.5s; }
+        .flag:nth-child(3n) { background-color: var(--yellow); animation-delay: 1s; }
+        .flag:nth-child(4n) { background-color: #9c27b0; animation-delay: 1.5s; }
+
+        @keyframes sway {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        .altar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .escalon {
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+            padding: 20px;
+            margin-bottom: 10px;
+            border-bottom: 8px solid rgba(0,0,0,0.3);
+            box-sizing: border-box;
+        }
+
+        .nivel-1 {
+            width: 65%;
+            background: linear-gradient(180deg, #d81b60 0%, #ad1457 100%);
+            border: 3px solid var(--yellow);
+        }
+
+        .nivel-2 {
+            width: 80%;
+            background: linear-gradient(180deg, #ff6f00 0%, #e65100 100%);
+            border: 3px solid var(--yellow);
+        }
+
+        .nivel-3 {
+            width: 95%;
+            background: linear-gradient(180deg, #7b1fa2 0%, #4a148c 100%);
+            border: 3px solid var(--yellow);
+        }
+
+        .titulo-nivel {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+        }
+
+        .grid-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .card-element {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--yellow);
+            border-radius: 12px;
+            width: 160px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .card-element:hover {
+            transform: scale(1.05);
+        }
+
+        .card-element img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--yellow);
+        }
+
+        .card-element p {
+            margin: 8px 5px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #ffffff;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: var(--yellow);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 700px) {
+            .nivel-1, .nivel-2, .nivel-3 { width: 100%; }
+            .card-element { width: 130px; }
+            .card-element img { height: 90px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner-picado">
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+    </div>
+
+    <header>
+        <h1>Altar de Muertos</h1>
+        <p class="subtitle">Ofrenda en memoria de nuestros seres queridos 🌼</p>
+    </header>
+
+    <div class="altar">
+        
+        <!-- NIVEL 1 -->
+        <div class="escalon nivel-1">
+            <div class="titulo-nivel">👑 Nivel 1: El Cielo y lo Sagrado</div>
+            <div class="grid-items">
+                <div class="card-element">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400" alt="Retrato Principal">
+                    <p>Retrato Principal</p>
+                </div>
+                <div class="card-element">
+                    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?w=400" alt="Cruz de Ceniza">
+                    <p>Cruz de Ceniza</p>
+                </div>
+                <div class="card-element">
+                    <img src="https://assets.holyart.it/images/QU000558/es/500/A/SN027553/CLOSEUP01_HD/h-e2ac9075/cuadro-sobre-tela-pictorica-sagrado-corazon-de-jesus-de-maria-25x20-cm.jpg" alt="Santos y Ánimas">
+                    <p>Santos y Ánimas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NIVEL 2 -->
+        <div class="escalon nivel-2">
+            <div class="titulo-nivel">🍞 Nivel 2: El Mundo Terrenal</div>
+            <div class="grid-items">
+                <div class="card-element">
+                    <img src="https://thehealthybakery.mx/cdn/shop/files/PHOTO-2026-09-11-12-53-55_800x.jpg?v=1789153734" alt="Pan de Muerto">
+                    <p>Pan de Muerto</p>
+                </div>
+                <div class="card-element">
+                    <img src="https://images.unsplash.com/photo-1572085313466-6710de8d7ba3?w=400" alt="Calaveritas">
+                    <p>Calaveritas de Azúcar</p>
+                </div>
+                <div class="card-element">
+                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400" alt="Platillos Favoritos">
+                    <p>Platillos Favoritos</p>
+                </div>
+                <div class="card-element">
+                    <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=400" alt="Veladoras">
+                    <p>Veladoras del Camino</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NIVEL 3 -->
+        <div class="escalon nivel-3">
+            <div class="titulo-nivel">🌼 Nivel 3: La Tierra y la Guía</div>
+            <div class="grid-items">
+                <div class="card-element">
+                    <img src="https://images.unsplash.com/photo-1572085313466-6710de8d7ba3?w=400" alt="Cempasúchil">
+                    <p>Flor de Cempasúchil</p>
+                </div>
+                <div class="card-element">
+                    <img src="https://heraldodemexico.com.mx/u/fotografias/m/2023/8/10/f1280x720-781975_913650_5050.jpg" alt="Vaso de Agua">
+                    <p>Vaso de Agua</p>
+                </div>
+                <div class="card-element">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2-Siz_Lr-sZDX7kw1LYI8Ir-K56YgzbsaO0c8QrK5NCfyd3hKOsKeBlc&s=10" alt="Sal Purificadora">
+                    <p>Sal Purificadora</p>
+                </div>
+                <div class="card-element">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400" alt="Papel Picado">
+                    <p>Papel Picado</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>✨ Tradición Viva y Memoria Eterna ✨</p>
+    </footer>
+
+</body>
+</html>
